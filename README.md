@@ -1,16 +1,78 @@
-# React + Vite
+# Context API Intro
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A small React application that demonstrates how to share user state with the React Context API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Provides user state through `UserContextProvider`
+- Updates the user when the **Login** button is clicked
+- Displays the user's name, email, and profile image
+- Uses React, Vite, and Tailwind CSS
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Requirements
 
-## Expanding the Oxlint configuration
+- Node.js 18 or newer
+- npm
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Installation
+
+```bash
+git clone https://github.com/sujeethonnappagol/context-API.git
+cd context-api-intro
+npm install
+```
+
+### Run the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal, usually `http://localhost:5173`.
+
+### Create a production build
+
+```bash
+npm run build
+```
+
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```text
+src/
+├── Components/
+│   ├── Intro.jsx
+│   ├── Login.jsx
+│   └── Profile.jsx
+├── Context/
+│   ├── UserContext.js
+│   └── UserContextProvider.jsx
+├── App.jsx
+├── index.css
+└── main.jsx
+```
+
+## How It Works
+
+`UserContextProvider` stores the current user and exposes `user` and `setUser` through React Context. `App.jsx` calls `setUser` when the Login button is clicked, and the child components read the shared user data with `useContext`.
+
+## Available Scripts
+
+| Command           | Description                       |
+| ----------------- | --------------------------------- |
+| `npm run dev`     | Start the Vite development server |
+| `npm run build`   | Build the app for production      |
+| `npm run preview` | Preview the production build      |
+| `npm run lint`    | Run Oxlint                        |
+
+## License
+
+This project is for learning and practice.
